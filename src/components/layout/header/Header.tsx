@@ -6,6 +6,7 @@ import {
   CalloutHeading,
   CalloutText,
   CaretDown,
+  List,
   ListItemHeading,
   ListItemLink,
   ListItemText,
@@ -18,9 +19,8 @@ import {
   NavigationMenuViewport,
   ViewportPosition
 } from "@/components/layout/header/header.styles";
-import {List} from "@radix-ui/react-navigation-menu";
 
-const NavigationMenuDemo = () => {
+const Header = () => {
   return (
     <NavigationMenuRoot>
       <NavigationMenuList>
@@ -101,7 +101,6 @@ const NavigationMenuDemo = () => {
   );
 };
 
-// eslint-disable-next-line react/display-name
 const ListItem = forwardRef<any, any>(({ children, title, ...props }, forwardedRef) => (
   <li>
     <NavigationMenu.Link asChild>
@@ -112,5 +111,6 @@ const ListItem = forwardRef<any, any>(({ children, title, ...props }, forwardedR
     </NavigationMenu.Link>
   </li>
 ));
+ListItem.displayName = "ListItem";
 
-export default NavigationMenuDemo;
+export default Header;

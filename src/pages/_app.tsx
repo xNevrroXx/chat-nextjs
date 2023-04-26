@@ -1,25 +1,35 @@
 import type {AppProps} from 'next/app'
 import {Provider} from 'react-redux';
+import { globalCss } from '@stitches/react';
 // styles
 import "../styles/global.css";
 // own modules
 import {store} from '@/store';
-import { createGlobalStyle } from 'styled-components';
- 
-const GlobalStyle = createGlobalStyle`
- * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Inter, sans-serif;
-  font-size: 16px;
- } 
-`;
+
+const GlobalCss = globalCss({
+  "*": {
+    boxSizing: "border-box",
+    fontFamily: "Inter, sans-serif",
+    fontWeight: 500
+  },
+
+  html: {
+    overflowX: 'hidden',
+  },
+
+  body: {
+    margin: 0,
+    backgroundColor: '$loContrast',
+  },
+
+  svg: { display: 'block' },
+})
 
 export default function App({pageProps, Component}: AppProps) {
+  GlobalCss();
+
   return (
     <>
-      <GlobalStyle />
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>

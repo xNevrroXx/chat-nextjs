@@ -1,7 +1,8 @@
 import React, {FC, ReactNode} from 'react';
-import Header from './header/Header';
-import Meta from '../seo/meta/Meta';
-import { IMeta } from '../seo/meta/meta.interface';
+// own modules
+import Header from '@/components/layout/header/Header';
+import Meta from '@/components/seo/meta/Meta';
+import { IMeta } from '@/components/seo/meta/meta.interface';
 
 interface TLayoutProps {
     meta: IMeta,

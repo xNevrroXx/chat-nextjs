@@ -22,7 +22,7 @@ const Authorization = () => {
 
     const onClickRegisterBtn = useCallback(() => {
         router.push(createPath({ path: ROUTE.REGISTRATION }));
-    }, [])
+    }, [router])
 
     return (
         <Layout meta={{ title: "Authorization", description: "user authorization page" }}>
